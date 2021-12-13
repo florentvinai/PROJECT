@@ -1,0 +1,32 @@
+
+te mettre sans repertoir pour nouveau project name
+mkdir flask_auth_app
+
+cd flask_auth_app
+
+# pas sur que tu dois le faire c 'est pour ton environnement python virtuel
+python3 -m venv auth
+source auth/bin/activate
+
+pip install flask  flask-login
+
+tu es dans le rep flask_auth_app
+mkdir project
+mettre tous les fichiers de project (download) dedans : init.py, auth.py, build_tables, data.py, main.py, models.py, 
+aller dans project
+mkdir templates
+mettre tous les templates de project dedans :bases ....signup...
+
+se mettre en haut: dans le repretoire flask_auth_app
+
+sqlite3 Reservation.sqlite < project/Build_tables.sql
+
+si pas erreor alors :
+
+export FLASK_APP=project
+export FLASK_DEBUG=1
+
+
+lancer : flask run ( dans le repertoiter flask_auth_app)
+
+ouvre mozilla au 127...:5000/

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  <body>  
+    <h3>SALLES  Information</h3>   
+    <table border=5>  
+    <thead>  
+    <td>ID</td>  
+    <td>EMAIL</td>  
+    <td>username</td>   
+    <td>fullname</td>  
+    <td>position</td>  
+    <td>hash</td>  
+    </thead>  
+    {% for row in rows %}  
+    <tr>  
+    <td>{{row["id"]}}</td>  
+    <td>{{row["email"]}}</td>  
+    <td>{{row["username"]}}</td>  
+    <td>{{row["fullname"]}}</td>  
+    <td>{{row["position"]}}</td>  
+    <td>{{row["password_hash"]}}</td>  
+    </tr>  
+    {% endfor %}   
+    </table>  
+    <br><br>  
+    <a href="/">Go back to home page</a>  
+    </body>  
+</h1>
+{% endblock %}
