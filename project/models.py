@@ -49,7 +49,7 @@ def insert_user(connection, users):
   password_hash = generate_password_hash(users['password'])
   #sql = 'INSERT INTO users(id, email, password_hash, username, fullname, position ) VALUES (:id, :email, :password_hash, :username, :fullname, :position);'
   sql = 'INSERT INTO users VALUES (:id, :email, :username, :fullname, :position, :password_hash);'
-  connection.execute(sql, {'id' : users['id'],'email' : users['email'],'username' : users['username'], 'fullname' : users['fullname'],'position' : users['position'],'password_hash' : password_hash,  })
+  connection.execute(sql, {'id' : users['id'],'email' : users['email'],'username' : users['username'], 'fullname' : users['fullname'],'position' : users['position'], 'password_hash' : password_hash  } )
   #connection.execute(sql, users)
   connection.commit()
 
@@ -57,8 +57,8 @@ def add_user2(connection, users):
 
   password_hash = generate_password_hash(users['password'])
   
-  sql = 'INSERT INTO users VALUES (:id, :email, :username, :fullname, :position,  :password_hash,);'
-  connection.execute(sql, {'id' : users['id'],'email' : users['email'], 'username' : users['username'], 'fullname' : users['fullname'],'position' : users['position'], 'password_hash' : password_hash,})
+  sql = 'INSERT INTO users VALUES (:id, :email, :username, :fullname, :position,  :password_hash);'
+  connection.execute(sql, {'id' : users['id'],'email' : users['email'], 'username' : users['username'], 'fullname' : users['fullname'],'position' : users['position'], 'password_hash' : password_hash } )
   
   #connection.execute(sql, users)
   connection.commit()
