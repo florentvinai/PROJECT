@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS salles;
+DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  email VARCHAR(128) UNIQUE NOT NULL,
+  username VARCHAR(50),
+  fullname VARCHAR(50),
+  position VARCHAR(50),
+  password_hash VARCHAR(128) 
+);
+
+CREATE TABLE salles(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  salleName VARCHAR(50) UNIQUE NOT NULL,
+  telephone BOOLEAN, 
+  projector BOOLEAN, 
+  tableau BOOLEAN,
+  capacity INTEGER NOT NULL
+);
+
+CREATE TABLE reservations(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title VARCHAR(50) ,
+  salleId INTEGER NOT NULL,
+  userId INTEGER NOT NULL,
+  dateDebut DATETIME NOT NULL,
+  durationH INTEGER NOT NULL,
+  descriptionM  VARCHAR(500) NOT NULL
+);

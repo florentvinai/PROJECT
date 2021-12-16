@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>  
+  <h3>SALLES  Information</h3>   
+  <table border=5>  
+  <thead>  
+  <td>ID</td>  
+  <td>Name of Salle</td>  
+  <td>telephone</td>   
+  <td>projector</td>  
+  <td>tableau</td>  
+  <td>capacity</td>  
+  </thead>  
+  {% for row in rows %}  
+  <tr>  
+  <td>{{row["id"]}}</td>  
+  <td>{{row["salleName"]}}</td>  
+  <td>{{row["telephone"]}}</td>  
+  <td>{{row["projector"]}}</td>  
+  <td>{{row["tableau"]}}</td>  
+  <td>{{row["capacity"]}}</td>  
+  </tr>  
+  {% endfor %}   
+  </table>  
+  <br><br>  
+  <a href="/">Go back to home page</a>  
+  </body>  
+{% endblock %}
